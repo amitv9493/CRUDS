@@ -1,0 +1,15 @@
+.table-image{
+    height: 100px;
+    width: 100px;
+}
+
+
+.table-wrapper{
+    width: 50%;
+    justify-content: right;
+    display: inline-table;
+}
+
+.add{
+    display: inline-block;
+}

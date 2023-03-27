@@ -6,4 +6,4 @@ from .models import *
 
 @admin.register(Food)
 class FoodAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['food_name', 'quantity','calories','total_calories',]

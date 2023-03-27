@@ -9,11 +9,11 @@ class Food(models.Model):
     food_name = models.CharField(_("Food"), max_length=100)
     quantity = models.PositiveIntegerField(_("Quantity"))
     calories = models.DecimalField(_("Calories"), max_digits=8, decimal_places=2)
-    image = models.ImageField(_("Food Image"), upload_to='food/images', height_field=None, width_field=None, max_length=None)
+    image = models.ImageField(_("Food Image"), upload_to='food/images',blank=True)
 
     @property
     def total_calories(self):
-        calories = str(self.calories * self.quantity)
+        calories = (self.calories * self.quantity)
         return calories
     
     def __str__(self):
