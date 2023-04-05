@@ -6,7 +6,7 @@ import array as arr
 # Create your views here.
 
 def homeview(request):
-    objects = Food.objects.filter(person = request.user)
+    objects = Food.objects.all()
     calories = [int(i.total_calories) for i in objects]
     # total_consumption = 
     total = sum(calories)
@@ -23,7 +23,7 @@ def update_view(request):
     return redirect(request, 'functioncrud/index1.html',context={'food':food})
 
 def delete_view(request,pk):
-    object = get_object_or_404(Food,pk=pk)
+    object = Food.objects.filter(id =pk)
     object.delete()
     return redirect('home')
 
